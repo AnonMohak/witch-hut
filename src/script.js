@@ -2,7 +2,6 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { Timer } from 'three/addons/misc/Timer.js'
 import GUI from 'lil-gui'
-//import Stats from 'stats.js'
 import {Sky} from 'three/addons/objects/Sky.js'
 
 /**
@@ -10,10 +9,6 @@ import {Sky} from 'three/addons/objects/Sky.js'
  */
 // 1 3JS unit == 1m
 
-//Stats
-//const stats=new Stats()
-//stats.showPanel(0)
-//document.body.appendChild(stats.dom)
 
 // Debug
 const gui = new GUI()
@@ -451,7 +446,6 @@ const tick = () =>
     timer.update()
     const elapsedTime = timer.getElapsed()
     
-    //stats.begin()
     // Update controls
     controls.update()
 
@@ -481,7 +475,6 @@ const tick = () =>
     // Render
     renderer.render(scene, camera)
     
-    //stats.end()
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
 }
