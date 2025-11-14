@@ -336,20 +336,30 @@ controls.maxDistance=16
 /**
  * Sounds
  */
+
 const listener = new THREE.AudioListener();
 camera.add(listener);
 
 const audioLoader = new THREE.AudioLoader();
+const bgSound = new THREE.Audio(listener);
 
-const sound = new THREE.Audio(listener);
-
-audioLoader.load('sound/bg.mp3', function(buffer) {
-    sound.setBuffer(buffer);
-    sound.setLoop(true); // Set to true to loop the sound
-    sound.setVolume(0.5); // Set the volume between 0 and 1
-    sound.play(); // Play the sound
+// Fix autoplay error (Chrome)
+window.addEventListener('click', () => {
+    const ctx = listener.context;
+    if (ctx.state === "suspended") {
+        ctx.resume();
+    }
 });
 
+audioLoader.load(
+    'sound/bg.mp3',
+    (buffer) => {
+        bgSound.setBuffer(buffer);
+        bgSound.setLoop(true);
+        bgSound.setVolume(0.5);
+        bgSound.play();  // will play after context resumes
+    }
+);
 
 
 /**
