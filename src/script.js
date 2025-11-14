@@ -2,10 +2,18 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { Timer } from 'three/addons/misc/Timer.js'
 import GUI from 'lil-gui'
+import Stats from 'stats.js'
 
 /**
  * Base
  */
+// 1 3JS unit == 1m
+
+//Stats
+const stats=new Stats()
+stats.showPanel(0)
+document.body.appendChild(stats.dom)
+
 // Debug
 const gui = new GUI()
 gui.hide()
@@ -16,15 +24,37 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
+//Meshes
+
+//floor gang
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(20,20), new THREE.MeshStandardMaterial())
+floor.rotation.x=-Math.PI*0.5
+
+scene.add(floor)
+
 /**
  * House
  */
-// Temporary sphere
-const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(1, 32, 32),
-    new THREE.MeshStandardMaterial({ roughness: 0.7 })
-)
-scene.add(sphere)
+
+//Dr. House
+const house=new THREE.Group()
+scene.add(house)
+
+//Walls
+const walls=new THREE.Mesh(new THREE.BoxGeometry(4,2.5,4), new THREE.MeshStandardMaterial())
+walls.position.y+=1.25
+house.add(walls)
+
+//Roof
+const roof=new THREE.Mesh(new THREE.ConeGeometry(3.5,1.5,4), new THREE.MeshStandardMaterial())
+roof.position.y=2.5+0.75
+roof.rotation.y=Math.PI*0.25
+house.add(roof)
+
+//Door
+const door=new THREE.Mesh(new THREE.PlaneGeometry(), new THREE.MeshStandardMaterial())
+house.add(door)
+
 
 /**
  * Lights
@@ -83,6 +113,13 @@ scene.add(camera)
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
+//controls restrictions
+
+//controls.maxPolarAngle=Math.PI*0.5 -0.05
+//controls.minPolarAngle=0
+//controls.minDistance=3.5
+//controls.maxDistance=22
+
 
 /**
  * Renderer
@@ -103,13 +140,15 @@ const tick = () =>
     // Timer
     timer.update()
     const elapsedTime = timer.getElapsed()
-
+    
+    stats.begin()
     // Update controls
     controls.update()
 
     // Render
     renderer.render(scene, camera)
-
+    
+    stats.end()
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
 }
