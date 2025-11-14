@@ -14,4 +14,8 @@ npm run build
 ```
 
 ## Resources
-### Textures - https://polyhaven.com/
+### Textures - [PolyHaven](https://polyhaven.com/)
+### Docs - [ThreeJS](https://threejs.org/docs/)
+### Math - [Wiki](https://en.wikipedia.org/wiki/Sine_and_cosine)
+### Trigno - [Desmos](https://www.desmos.com/)
+### Optimize - [Squoosh](https://squoosh.app/)
