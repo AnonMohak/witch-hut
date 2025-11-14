@@ -28,11 +28,11 @@ const scene = new THREE.Scene()
 const textureLoader=new THREE.TextureLoader()
 
 //floor
-const floorTextureAlpha=textureLoader.load("./floor/alpha.webp")
-const floorTextureColor=textureLoader.load("./floor/diff.webp")
-const floorTextureArm=textureLoader.load("./floor/arm.webp")
-const floorTextureDisp=textureLoader.load("./floor/disp.webp")
-const floorTextureNor=textureLoader.load("./floor/nor.webp")
+const floorTextureAlpha=textureLoader.load("/floor/alpha.webp")
+const floorTextureColor=textureLoader.load("/floor/diff.webp")
+const floorTextureArm=textureLoader.load("/floor/arm.webp")
+const floorTextureDisp=textureLoader.load("/floor/disp.webp")
+const floorTextureNor=textureLoader.load("/floor/nor.webp")
 
 floorTextureColor.colorSpace=THREE.SRGBColorSpace
 
@@ -52,16 +52,16 @@ floorTextureDisp.wrapT=THREE.RepeatWrapping
 floorTextureNor.wrapT=THREE.RepeatWrapping
 
 //wall
-const wallTextureColor=textureLoader.load("./wall/diff.webp")
-const wallTextureArm=textureLoader.load("./wall/arm.webp")
-const wallTextureNor=textureLoader.load("./wall/nor.webp")
+const wallTextureColor=textureLoader.load("/wall/diff.webp")
+const wallTextureArm=textureLoader.load("/wall/arm.webp")
+const wallTextureNor=textureLoader.load("/wall/nor.webp")
 
 wallTextureColor.colorSpace=THREE.SRGBColorSpace
 
 //roof
-const roofTextureColor=textureLoader.load("./roof/diff.webp")
-const roofTextureArm=textureLoader.load("./roof/arm.webp")
-const roofTextureNor=textureLoader.load("./roof/nor.webp")
+const roofTextureColor=textureLoader.load("/roof/diff.webp")
+const roofTextureArm=textureLoader.load("/roof/arm.webp")
+const roofTextureNor=textureLoader.load("/roof/nor.webp")
 
 roofTextureColor.colorSpace=THREE.SRGBColorSpace
 
@@ -74,9 +74,9 @@ roofTextureArm.wrapS=THREE.RepeatWrapping
 roofTextureNor.wrapS=THREE.RepeatWrapping
 
 //bush
-const bushTextureColor=textureLoader.load("./bush/diff.webp")
-const bushTextureArm=textureLoader.load("./bush/arm.webp")
-const bushTextureNor=textureLoader.load("./bush/nor.webp")
+const bushTextureColor=textureLoader.load("/bush/diff.webp")
+const bushTextureArm=textureLoader.load("/bush/arm.webp")
+const bushTextureNor=textureLoader.load("/bush/nor.webp")
 
 bushTextureColor.colorSpace=THREE.SRGBColorSpace
 
@@ -89,9 +89,9 @@ bushTextureArm.wrapS=THREE.RepeatWrapping
 bushTextureNor.wrapS=THREE.RepeatWrapping
 
 //grave
-const graveTextureColor=textureLoader.load("./grave/diff.webp")
-const graveTextureArm=textureLoader.load("./grave/arm.webp")
-const graveTextureNor=textureLoader.load("./grave/nor.webp")
+const graveTextureColor=textureLoader.load("/grave/diff.webp")
+const graveTextureArm=textureLoader.load("/grave/arm.webp")
+const graveTextureNor=textureLoader.load("/grave/nor.webp")
 
 graveTextureColor.colorSpace=THREE.SRGBColorSpace
 
@@ -100,13 +100,13 @@ graveTextureArm.repeat.set(0.3,0.4)
 graveTextureNor.repeat.set(0.3,0.4)
 
 //door
-const doorTextureAlpha=textureLoader.load("./door/alpha.webp")
-const doorTextureColor=textureLoader.load("./door/color.webp")
-const doorTextureAO=textureLoader.load("./door/ao.webp")
-const doorTextureDisp=textureLoader.load("./door/height.webp")
-const doorTextureNor=textureLoader.load("./door/normal.webp")
-const doorTextureMe=textureLoader.load("./door/metalness.webp")
-const doorTextureRo=textureLoader.load("./door/roughness.webp")
+const doorTextureAlpha=textureLoader.load("/door/alpha.webp")
+const doorTextureColor=textureLoader.load("/door/color.webp")
+const doorTextureAO=textureLoader.load("/door/ao.webp")
+const doorTextureDisp=textureLoader.load("/door/height.webp")
+const doorTextureNor=textureLoader.load("/door/normal.webp")
+const doorTextureMe=textureLoader.load("/door/metalness.webp")
+const doorTextureRo=textureLoader.load("/door/roughness.webp")
 
 doorTextureColor.colorSpace=THREE.SRGBColorSpace
 
