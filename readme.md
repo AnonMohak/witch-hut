@@ -13,4 +13,5 @@ npm run dev
 npm run build
 ```
 
-----------------------------------------------------
+## Resources
+### Textures - https://polyhaven.com/
